@@ -6,7 +6,13 @@ public class Test2 {
     }
 
     public static void main(String[] args) {
-        def((String str) -> {return str.length();});
+        final int i = 10;
+        def((String str) -> {
+            int a = 5;
+            System.out.println(i);
+            return str.length();
+        });
+        System.out.println();
     }
 }
 
