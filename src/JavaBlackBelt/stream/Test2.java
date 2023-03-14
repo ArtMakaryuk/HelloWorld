@@ -19,19 +19,24 @@ public class Test2 {
         students.add(st4);
         students.add(st5);
 
+        students = students.stream().sorted((x, y) ->
+                x.getName().compareTo(y.getName())
+        ).collect(Collectors.toList());
+        System.out.println(students);
+
 //        List<Student> students2 = students.stream().filter(element
 //        -> element.getAge()>22 && element.getAvgGrade()<7.2).collect(Collectors.toList());
 //
 //        System.out.println(students2);
 
-        Stream<Student> myStream = Stream.of(st1,st2,st3,st4,st5);
-        myStream.filter(student -> student.getAvgGrade()<7.2)
+        Stream<Student> myStream = Stream.of(st1, st2, st3, st4, st5);
+        myStream.filter(student -> student.getAvgGrade() < 7.2)
                 .collect(Collectors.toList());
 
     }
 }
 
-class Student{
+class Student {
     private String name;
     private char sex;
     private int age;
