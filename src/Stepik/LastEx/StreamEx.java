@@ -1,3 +1,5 @@
+package Stepik.LastEx;
+
 import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;

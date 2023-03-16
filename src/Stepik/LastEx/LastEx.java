@@ -1,3 +1,5 @@
+package Stepik.LastEx;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -105,7 +107,7 @@ public class LastEx {
         assert salaries.get(randomTo).
 
                 equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
-        assert 1>0:"Hello";
+
     }
 }
 
