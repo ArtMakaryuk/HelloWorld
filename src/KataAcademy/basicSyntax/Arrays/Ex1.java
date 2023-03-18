@@ -1,7 +1,5 @@
 package KataAcademy.basicSyntax.Arrays;
 
-
-
 public class Ex1 {
     public static void main(String[] args) {
         int[] numbers = {};
