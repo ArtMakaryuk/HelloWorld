@@ -6,8 +6,8 @@ public abstract class KeywordAnalyzer implements TextAnalyzer{
     protected abstract Label getLabel();
 
     public Label processText(String text) {
-        String[] str = getKeywords();
-        for (String at: str){
+//        String[] str = getKeywords();
+        for (String at: getKeywords()){
             if (text.contains(at)) {
                 return getLabel();
             }

@@ -4,40 +4,27 @@ import java.util.*;
 import java.util.function.Consumer;
 
 public class MailService<T> implements Consumer<Sendable<T>> {
-    private static class MyHashMap<K, V> extends HashMap<K,V> {
+    private Map<String, List<T>> messagesMap = new HashMap<String, List<T>>() {
         @Override
-        public V get(Object key) {
-            V temp = super.get(key);
-            try {
-                if (temp == null) temp = (V)Collections.emptyList();
-            } catch (ClassCastException e) {}
-            return temp;
+        public List<T> get(Object key) {
+            if (this.containsKey(key)) {
+                return super.get(key);
+            } else {
+                return Collections.emptyList();
+            }
         }
-    }
-    private Map<String, List<T>> mailBox;
-
-    public MailService(){
-        mailBox = new MyHashMap<>();
-    }
+    };
     @Override
-    public void accept(Sendable<T> t){
-        if(mailBox.containsKey(t.getTo())) {
-            List<T> val;
-            val = mailBox.get(t.getTo());
-            val.add(t.getContent());
-            mailBox.put(t.getTo(), val);
-        } else {
-            List<T> val;
-            val = new LinkedList<>();
-            val.add(t.getContent());
-            mailBox.put(t.getTo(), val);
+    public void accept(Sendable<T> sendable) {
+        List<T> ts = messagesMap.get(sendable.getTo());
+        if (ts.size() == 0) {
+            ts = new ArrayList<>();
         }
+        ts.add(sendable.getContent());
+        messagesMap.put(sendable.getTo(), ts);
     }
     public Map<String, List<T>> getMailBox() {
-
-        return mailBox;
-
+        return messagesMap;
     }
-
-
 }
+
