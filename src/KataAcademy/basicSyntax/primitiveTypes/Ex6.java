@@ -11,8 +11,6 @@ public class Ex6 {
 
     }
     public static void maxLongSqr() {
-        BigInteger l = BigInteger.valueOf(MAX_VALUE);
-        BigInteger ans = l.multiply(l);
-        System.out.println(ans);
+        System.out.println(BigInteger.valueOf(Long.MAX_VALUE).pow(1));
     }
 }

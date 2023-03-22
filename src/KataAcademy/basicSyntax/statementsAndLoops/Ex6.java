@@ -7,6 +7,6 @@ public class Ex6 {
     }
 
     public static String checkWeekend(String weekday) {
-        return weekday == "Sunday" || weekday == "Saturday" ? "Ура, выходной!" : "Надо еще поработать";
+        return weekday.equals("Sunday") || weekday.equals("Saturday") ? "Ура, выходной!" : "Надо еще поработать";
     }
 }

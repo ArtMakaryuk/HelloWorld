@@ -6,7 +6,6 @@ public class Ex5 {
         calcCircleRadius(area);
     }
     public static void calcCircleRadius(double area) {
-        double radius = Math.sqrt(area / Math.PI);
-        System.out.printf("%.2f", radius);
+        System.out.printf("%.2f", Math.sqrt(area / Math.PI));
     }
 }
