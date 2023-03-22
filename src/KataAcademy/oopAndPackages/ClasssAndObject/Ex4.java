@@ -36,7 +36,7 @@ public class Ex4 {
 
         @Override
         public int hashCode() {
-            return Double.hashCode(re)-Double.hashCode(im);
+            return 31 * Double.hashCode(re) - 31 * Double.hashCode(im);
         }
     }
 }

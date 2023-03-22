@@ -2,7 +2,7 @@ package KataAcademy.basicSyntax.Arrays;
 
 import javax.sound.midi.Soundbank;
 import java.util.Arrays;
-
+//new int[2]
 public class Ex3 {
     public static void main(String[] args) {
         int[] numbers = {};
@@ -12,12 +12,9 @@ public class Ex3 {
         int[] ans;
         if (numbers.length != 0) {
             if (numbers.length % 2 == 0) {
-                ans = new int[2];
-                ans[0] = numbers[numbers.length / 2 - 1];
-                ans[1] = numbers[numbers.length / 2];
+                ans = new int[] {numbers[numbers.length / 2 - 1], numbers[numbers.length / 2]};
             } else {
-                ans = new int[1];
-                ans[0] = numbers[numbers.length / 2];
+                ans = new int[] {numbers[numbers.length / 2]};
             }
             return ans;
         } else {

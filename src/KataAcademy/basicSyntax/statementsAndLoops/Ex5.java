@@ -9,7 +9,7 @@ public class Ex5 {
 
     }
     public static boolean isWeekend(String weekday) {
-        if (weekday == "Sunday" || weekday == "Saturday") {
+        if (weekday.equals("Sunday") || weekday.equals("Saturday")) {
             return true;
         } else {
             return false;

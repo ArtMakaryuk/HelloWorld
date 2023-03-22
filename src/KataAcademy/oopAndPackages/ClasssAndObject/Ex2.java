@@ -7,8 +7,10 @@ public class Ex2 {
         System.out.println(current.isWeekend());
     }
 }
+
 enum Day {
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+
     public boolean isWeekend() {
         return this == SUNDAY || this == SATURDAY;
     }
@@ -26,9 +28,8 @@ enum Day {
             return "Пятница";
         } else if (this == SATURDAY) {
             return "Суббота";
-        } else if (this == SUNDAY) {
+        } else {
             return "Воскресенье";
         }
-        return "Не день недели";
     }
 }
