@@ -7,13 +7,13 @@ public class Ex3 {
     public static void main(String[] args) {
 
         DynamicArray<String> dynamicArray = new DynamicArray<>();
-        String a = dynamicArray.get(0);
+//        String a = dynamicArray.get(0);
 
-//        dynamicArray.add("Hello");
-//        dynamicArray.add("Privet");
-//        dynamicArray.remove(0);
-//        System.out.println(dynamicArray.get(0));
-//        System.out.println(dynamicArray.length());
+        dynamicArray.add("Hello");
+        dynamicArray.add("Privet");
+        dynamicArray.remove(0);
+        System.out.println(dynamicArray.get(0));
+        System.out.println(dynamicArray.length());
 //        DynamicArray array = new DynamicArray<>();
 //        int count = 0;
 //        while (count < 20){
@@ -43,7 +43,6 @@ public class Ex3 {
         }
 
         public void remove(int index) {
-//            int a = array.length;
             if (index >= count || index < 0) {
                 throw new ArrayIndexOutOfBoundsException("Некорректный индекс");
             } else {
@@ -61,7 +60,6 @@ public class Ex3 {
                     }
                 }
                 array = newArray;
-
             }
         }
         public T get(int index) {
