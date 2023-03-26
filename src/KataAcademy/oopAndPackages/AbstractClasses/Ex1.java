@@ -38,11 +38,13 @@ public class Ex1 {
 
         @Override
         public String toString() {
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < this.bytes.length; i++) {
-                sb.append((char) this.bytes[i]);
-            }
-            return sb.toString();
+//            StringBuilder sb = new StringBuilder();
+//            for (int i = 0; i < this.bytes.length; i++) {
+//                sb.append((char) this.bytes[i]);
+//            }
+//            return sb.toString();
+            return new String(bytes);
+
         }
     }
 

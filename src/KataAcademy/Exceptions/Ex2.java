@@ -18,10 +18,10 @@ public class Ex2 {
         if (stackTraceElements.length >= 3) {
             try {
                 StackTraceElement element = stackTraceElements[3];
-                sb.append(element.getClassName());
-                sb.append("#");
-                sb.append(element.getMethodName());
-            } catch (Exception e ) {
+                sb.append(element.getClassName())
+                        .append("#")
+                        .append(element.getMethodName());
+            } catch (Exception e) {
                 return null;
             }
         }
