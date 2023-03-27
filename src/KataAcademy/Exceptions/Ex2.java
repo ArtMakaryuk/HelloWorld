@@ -16,14 +16,11 @@ public class Ex2 {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         StringBuilder sb = new StringBuilder();
         if (stackTraceElements.length >= 3) {
-            try {
-                StackTraceElement element = stackTraceElements[3];
-                sb.append(element.getClassName())
-                        .append("#")
-                        .append(element.getMethodName());
-            } catch (Exception e) {
-                return null;
-            }
+            StackTraceElement element = stackTraceElements[3];
+            sb.append(element.getClassName())
+                    .append("#")
+                    .append(element.getMethodName());
+
         }
         return sb.toString();
     }
