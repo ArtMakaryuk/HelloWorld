@@ -24,6 +24,7 @@ public class MailService<T> implements Consumer<Sendable<T>> {
 //            list = new ArrayList<>();
 //        }
 //        list.add(sendable.getContent());
+        // ÍÅ ÏÎÍÈÌÀŞ
         List<T> list = mailBox.getOrDefault(sendable.getTo(), new ArrayList<>());
         list.add(sendable.getContent());
         mailBox.put(sendable.getTo(), list);
