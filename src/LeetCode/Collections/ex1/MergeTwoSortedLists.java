@@ -1,0 +1,34 @@
+package LeetCode.Collections.ex1;
+
+import LeetCode.Collections.ListNode;
+
+public class MergeTwoSortedLists {
+
+
+    public static void main(String[] args) {
+
+        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+
+        ListNode list2 = new ListNode(1,new ListNode(3, new ListNode(4)));
+
+        System.out.println(list1);
+        System.out.println(list2);
+        Solution solution = new Solution();
+        ListNode listNode3 = solution.mergeTwoLists(list1, list2);
+        System.out.println(listNode3);
+    }
+}
+
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+        if (list1.val < list2.val) {
+            list1.next = mergeTwoLists(list1.next, list2);
+            return list1;
+        } else {
+            list2.next = mergeTwoLists(list2.next, list1);
+            return list2;
+        }
+    }
+}
